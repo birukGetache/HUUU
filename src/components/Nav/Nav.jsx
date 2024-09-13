@@ -1,21 +1,25 @@
-import { Component } from "react";
+import React, { Component } from "react";
+import { useMediaQuery } from "react-responsive";
 import Logo from "./Logo";
 import Links from "./Links";
-import Quote from "./Quote";
-import Search from "./Search";
+import HamburgerMenu from "./HamburgerMenu";
 import "./style.css";
-class Nav extends Component {
-  render() {
-    return (
-      <nav>
-        <div className="container container__nav">
-          <Logo />
-          <Links />
-          {/* <Quote /> */}
-          {/* <Search /> */}
-        </div>
-      </nav>
-    );
-  }
+
+const Nav = () => {
+  // Media query hook to check if screen width is less than or equal to 700px
+  const isMobile = useMediaQuery({ query: '(max-width: 700px)' });
+
+  return (
+    <nav>
+      <div className="container container__nav">
+        <Logo />
+        {isMobile ? <HamburgerMenu /> : <Links />}
+        {/* Optional components like Quote and Search */}
+        {/* <Quote /> */}
+        {/* <Search /> */}
+      </div>
+    </nav>
+  );
 }
+
 export default Nav;
