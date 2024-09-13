@@ -5,7 +5,7 @@ class Contact extends Component {
   render() {
     return (
       <div className="contact">
-        <a href="mailto:higa6038@gmail.com">
+        <a href="mailto:bayoyoba25@gmail.com">
           <AiFillMail />
           <span>bayoyoba25@gmail.com</span>
         </a>
