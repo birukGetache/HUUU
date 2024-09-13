@@ -48,6 +48,7 @@
     padding: 0; /* Remove default padding */
     margin: 0; /* Remove default margin */
     list-style-type: none; /* Remove default list styling if using ul */
+        
   }
   
   /* Style individual links */
@@ -72,5 +73,49 @@
   .links-container a:hover {
     background-color: #f0f0f0; /* Change background on hover */
     color: #007bff; /* Change text color on hover */
+  }
+  /* Base styling for links container (default to column layout) */
+.links-container {
+    display: flex;
+    flex-direction: column; /* Stack links vertically by default */
+    align-items: flex-start; /* Align items to the start of the container */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    list-style-type: none; /* Remove default list styling */
+  }
+  
+  .links-container a {
+    display: block; /* Make each link a block element to take full width */
+    padding: 10px 15px; /* Add padding for better click area and spacing */
+    text-decoration: none; /* Remove default underline */
+    color: #333; /* Set text color */
+    font-size: 16px; /* Adjust font size */
+    border-bottom: 1px solid #ddd; /* Add a subtle border below each link */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  .links-container a.active {
+    font-weight: bold; /* Make active link bold */
+    color: #007bff; /* Change color for active link */
+    border-bottom: 1px solid #007bff; /* Highlight the active link */
+  }
+  
+  .links-container a:hover {
+    background-color: #f0f0f0; /* Change background on hover */
+    color: #007bff; /* Change text color on hover */
+  }
+  
+  /* For screen width greater than 700px */
+  @media (min-width: 701px) {
+    .links-container {
+      flex-direction: row; /* Align links horizontally */
+      justify-content: flex-end; /* Align items to the right */
+    }
+  
+    .links-container a {
+      display: inline-block; /* Make each link inline-block */
+      border-bottom: none; /* Remove border-bottom for horizontal layout */
+      padding: 10px 20px; /* Adjust padding for horizontal layout */
+    }
   }
   
